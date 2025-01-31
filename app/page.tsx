@@ -12,7 +12,7 @@ export default function Home() {
           {/* Left side: About Me */}
           <div className="w-full ">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-clash-display-semibold mb-4 text-center md:text-left">
-              Hey, I'm Sanjana
+              Hey, I&apos;m Sanjana
             </h1>
             <p className="text-xl mb-6 text-center md:text-left">
               CS Student | Web Developer | AI Enthusiast
