@@ -52,6 +52,16 @@ export default {
   			}
   		},
   		fontFamily: {
+			manrope: ["var(--font-manrope)", "sans-serif"],
+			spacemono: ["var(--font-spacemono)", "sans-serif"],
+
+'clash-display-extralight': ['ClashDisplay-Extralight', 'sans-serif'],
+        'clash-display-light': ['ClashDisplay-Light', 'sans-serif'],
+        'clash-display-regular': ['ClashDisplay-Regular', 'sans-serif'],
+        'clash-display-medium': ['ClashDisplay-Medium', 'sans-serif'],
+        'clash-display-semibold': ['ClashDisplay-Semibold', 'sans-serif'],
+        'clash-display-bold': ['ClashDisplay-Bold', 'sans-serif'],
+        'clash-display-variable': ['ClashDisplay-Variable', 'sans-serif'],
   			'gambetta-light': [
   				'Gambetta-Light',
   				'sans-serif'

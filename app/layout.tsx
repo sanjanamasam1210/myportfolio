@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/app/components/navbar";
+import { Manrope,Space_Mono } from "next/font/google";
+
 import Cursor from "./cursor";
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400","500","600", "700", "800"], 
+  variable: "--font-manrope",
+});
+
+const spacemono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400","700"], 
+  variable: "--font-spacemono",
+});
 
 export const metadata: Metadata = {
   title: "Sanjana Masam",
@@ -15,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={` ${manrope.variable} ${spacemono.variable}`}>
       <Cursor/>
-      <body className="font-gambetta-medium bg-[#f6ede4]"
+      <body className="font-manrope"
       >
         
         <Navbar />

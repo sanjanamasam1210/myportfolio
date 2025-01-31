@@ -9,14 +9,23 @@ import { cn } from "@/lib/utils"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const [currentDateTime, setCurrentDateTime] = useState(new Date())
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
     const timer = setInterval(() => {
       setCurrentDateTime(new Date())
     }, 1000)
 
-    return () => clearInterval(timer)
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearInterval(timer)
+    }
   }, [])
 
   const formatDateTime = (date: Date) => {
@@ -30,23 +39,36 @@ export function Navbar() {
   }
 
   const navItems = [
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" }
+    { name: "PROJECTS", href: "/projects" },
+    { name: "ABOUT", href: "/about" },
+    { name: "CONTACT", href: "/contact" }
   ]
 
-
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="container flex h-14 items-center justify-between pl-5 pr-5">
+    <header className="sticky top-0 z-50 w-full transition-all duration-300">
+      <div className={cn(
+        "container flex h-14 items-center justify-between pl-5 pr-5 transition-all duration-300",
+        isScrolled ? "justify-center" : ""
+      )}>
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-lg">Sanjana Masam</span>
+        <Link href="/" className={cn(
+          "flex items-center space-x-2 transition-opacity duration-300",
+          isScrolled ? "hidden" : ""
+        )}>
+          <span className="text-lg">SANJANA MASAM</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <NavigationMenu className="hidden md:flex">
-          <ul className="flex items-center">
+        {/* Nav Items */}
+        <NavigationMenu className={cn(
+          "hidden md:flex",
+          isScrolled ? "flex-1 justify-center mt-6" : ""
+        )}>
+          <ul className={cn(
+            "flex items-center",
+            isScrolled 
+              ? "bg-white/30 backdrop-blur-md rounded-full px-4 py-2 border border-gray-200/50 shadow-lg" 
+              : ""
+          )}>
             {navItems.map((item, index) => (
               <NavigationMenuItem key={item.href} className="flex items-center">
                 <Link href={item.href} legacyBehavior passHref>
@@ -56,7 +78,8 @@ export function Navbar() {
                     {item.name}
                   </NavigationMenuLink>
                 </Link>
-                {index < navItems.length - 1 && (
+                {/* Remove separator slashes when scrolled */}
+                {!isScrolled && index < navItems.length - 1 && (
                   <span className="text-muted-foreground mx-1">/</span>
                 )}
               </NavigationMenuItem>
@@ -65,7 +88,10 @@ export function Navbar() {
         </NavigationMenu>
 
         {/* Right Section */}
-        <div className="flex items-center gap-4">
+        <div className={cn(
+          "flex items-center gap-4 transition-opacity duration-300",
+          isScrolled ? "hidden" : ""
+        )}>
           <span className="hidden sm:block text-md">
             {formatDateTime(currentDateTime)}
           </span>
