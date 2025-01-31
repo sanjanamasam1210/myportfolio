@@ -4,21 +4,22 @@ import Loading from './loading';
 
 export default function Home() {
   return (
-    <div className="relative h-screen w-full overflow-hidden flex mt-32 justify-center">
+    <div className="relative h-screen w-full overflow-hidden flex md:mt-32 sm:mt-20 justify-center">
       <Loading />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-32 items-center">
           {/* Left side: About Me */}
           <div className="w-full ">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-clash-display-semibold mb-4 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-clash-display-semibold mb-2 text-center md:text-left">
               Hey, I&apos;m Sanjana
             </h1>
-            <p className="text-xl mb-6 text-center md:text-left">
-              CS Student | Web Developer | AI Enthusiast
+            <p className="text-2xl mb-6 text-center md:text-left">
+              Full-Stack Web Developer
             </p>
-            <p className="text-lg text-center md:text-left">
-              I&apos;m passionate about turning ideas into reality through code. As a computer science student, I love exploring new technologies and creating innovative solutions to real-world problems.
+            <p className="text-lg text-center md:text-left leading-">
+            I enjoy creating interactive and visually appealing websites while continuously learning new technologies to stay up-to-date with the latest trends in web development.
+
             </p>
           </div>
 
