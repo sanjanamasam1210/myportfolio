@@ -18,7 +18,7 @@ export default function Home() {
               CS Student | Web Developer | AI Enthusiast
             </p>
             <p className="text-lg text-center md:text-left">
-              I'm passionate about turning ideas into reality through code. As a computer science student, I love exploring new technologies and creating innovative solutions to real-world problems.
+              I&apos;m passionate about turning ideas into reality through code. As a computer science student, I love exploring new technologies and creating innovative solutions to real-world problems.
             </p>
           </div>
 
