@@ -111,12 +111,12 @@ export function Navbar() {
         "md:hidden absolute w-full bg-background border-b",
         isOpen ? "block" : "hidden"
       )}>
-        <div className="container py-4 space-y-2">
+        <div className="container px-4 py-4 space-y-2">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block py-2 text-sm font-medium transition-colors hover:text-primary"
+              className="block px-2 py-2 text-sm font-medium transition-colors hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

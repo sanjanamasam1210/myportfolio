@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/app/components/navbar";
 import { Manrope,Space_Mono } from "next/font/google";
+import ScrollProgressButton from "./components/ScrollProgressButton";
 
 import Cursor from "./cursor";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         
         <Navbar />
         {children}
+        <ScrollProgressButton />
       </body>
     </html>
   );
