@@ -21,6 +21,8 @@ const spacemono = Space_Mono({
 export const metadata: Metadata = {
   title: "Sanjana Masam",
   description: "Sanjana Portfolio",
+  icons: {
+    icon: '/logo2.png'}
 };
 
 export default function RootLayout({
