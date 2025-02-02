@@ -39,7 +39,7 @@ export function Navbar() {
   }
 
   const navItems = [
-    { name: "PROJECTS", href: "#projects" },
+    { name: "PROJECTS", href: "/#projects" },
     { name: "ABOUT", href: "/about" },
     { name: "CONTACT", href: "/fonts" }
   ]
@@ -47,7 +47,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
       <div className={cn(
-        "container flex h-14 items-center justify-between pl-5 pr-5 transition-all duration-300",
+        "container flex h-14 items-center justify-between pl-10 pr-10 transition-all duration-300",
         isScrolled ? "justify-center" : ""
       )}>
         {/* Logo */}

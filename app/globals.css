@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   cursor: none !important;
-}
+} */
 
 @import url('../public/css/gambetta.css');
 @import url('../public/css/switzer.css');

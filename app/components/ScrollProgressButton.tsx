@@ -30,7 +30,7 @@ const ScrollProgressButton = () => {
             r="45"
             fill="none"
             stroke="#E5E7EB"
-            strokeWidth="8"
+            strokeWidth="3"
           />
           <circle
             cx="50"
@@ -38,14 +38,14 @@ const ScrollProgressButton = () => {
             r="45"
             fill="none"
             stroke="black"
-            strokeWidth="8"
+            strokeWidth="3"
             strokeDasharray="283"
             strokeDashoffset={283 - (283 * scrollProgress) / 100}
             transform="rotate(-90 50 50)"
           />
         </svg>
-        <div className="absolute w-12 h-12 rounded-full bg-white flex items-center justify-center">
-          <Image src="/donut1.png" alt="Logo" width={30} height={30} />
+        <div className="absolute w-12 h-12 rounded-full flex items-center justify-center font-clash-display-medium text-lg">
+          SM
         </div>
       </div>
     </Link>
