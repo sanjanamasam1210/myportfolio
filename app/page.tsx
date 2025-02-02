@@ -5,7 +5,7 @@ import Projects from "./projects/page";
 
 export default function Home() {
   return (
-    <div className="relative w-full overflow-hidden flex flex-col items-center md:mt-32 mt-20">
+    <div className="relative w-full overflow-hidden flex flex-col items-center md:mt-32 mt-10">
       <Loading />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Section */}

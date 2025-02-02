@@ -41,7 +41,7 @@ const ProjectPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="prose max-w-none"
+            className="prose max-w-none ml-4"
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Project Details</h2>
             <p className="text-gray-700 leading-relaxed">
@@ -56,6 +56,8 @@ const ProjectPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
+            className="ml-4"
+
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Technology Stack</h2>
             <div className="flex flex-wrap gap-2">
@@ -77,6 +79,8 @@ const ProjectPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            className="ml-4"
+
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Key Features</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -99,7 +103,7 @@ const ProjectPage = () => {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 0.3 }}
-    className="flex gap-4 mt-6"
+    className="flex gap-4 mt-6 ml-4"
   >
     {project.links?.github && (
       <a
