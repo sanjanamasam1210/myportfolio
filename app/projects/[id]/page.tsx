@@ -2,13 +2,26 @@
 
 import { useParams } from "next/navigation";
 import { projects } from "@/app/data/projects";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import BentoGrid from "@/app/components/BentoGrid"; // Add this import
+import BentoGrid from "@/app/components/BentoGrid";
+import { useRef } from "react";
 
 const ProjectPage = () => {
   const params = useParams();
   const project = projects.find((p) => p.id === Number(params.id));
+
+  const headerRef = useRef(null);
+  const detailsRef = useRef(null);
+  const techStackRef = useRef(null);
+  const featuresRef = useRef(null);
+  const linksRef = useRef(null);
+
+  const headerInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const detailsInView = useInView(detailsRef, { once: true, amount: 0.5 });
+  const techStackInView = useInView(techStackRef, { once: true, amount: 0.5 });
+  const featuresInView = useInView(featuresRef, { once: true, amount: 0.5 });
+  const linksInView = useInView(linksRef, { once: true, amount: 0.5 });
 
   if (!project) {
     return (
@@ -22,8 +35,10 @@ const ProjectPage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Project Header */}
       <motion.div
+        ref={headerRef}
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.5 }}
         className="mb-12 ml-4"
       >
         <h1 className="text-6xl font-bold mb-2 font-clash-display-semibold">{project.title}</h1>
@@ -31,33 +46,32 @@ const ProjectPage = () => {
       </motion.div>
 
       {/* Bento Grid */}
-        <BentoGrid images={project.images} />
-
+      <BentoGrid images={project.images} />
 
       {/* Project Details Below */}
       <div className="mt-12 max-w-3xl mx-auto space-y-8">
         {/* Detailed Description */}
         {project.details && (
           <motion.div
+            ref={detailsRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={detailsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
             className="prose max-w-none ml-4"
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Project Details</h2>
-            <p className="text-gray-700 leading-relaxed">
-              {project.details}
-            </p>
+            <p className="text-gray-700 leading-relaxed">{project.details}</p>
           </motion.div>
         )}
 
         {/* Technology Stack */}
         {project.technologies && (
           <motion.div
+            ref={techStackRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            animate={techStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
             className="ml-4"
-
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Technology Stack</h2>
             <div className="flex flex-wrap gap-2">
@@ -76,19 +90,16 @@ const ProjectPage = () => {
         {/* Key Features */}
         {project.features && (
           <motion.div
+            ref={featuresRef}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
             className="ml-4"
-
           >
             <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Key Features</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {project.features.map((feature, index) => (
-                <li
-                  key={index}
-                  className="flex items-center bg-gray-50 rounded-lg p-3"
-                >
+                <li key={index} className="flex items-center bg-gray-50 rounded-lg p-3">
                   <span className="text-primary mr-2">•</span>
                   {feature}
                 </li>
@@ -97,39 +108,39 @@ const ProjectPage = () => {
           </motion.div>
         )}
 
-       {/* Project Links */}
-{(project.links?.github || project.links?.live) && (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.3 }}
-    className="flex gap-4 mt-6 ml-4"
-  >
-    {project.links?.github && (
-      <a
-        href={project.links.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
-      >
-        <FiGithub />
-        View Code
-      </a>
-    )}
-    {project.links?.live && (
-      <a
-        href={project.links.live}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-lg hover:bg-slate-800 transition-colors"
-      >
-        <FiExternalLink />
-        Live Demo
-      </a>
-    )}
-  </motion.div>
-)}
-
+        {/* Project Links */}
+        {(project.links?.github || project.links?.live) && (
+          <motion.div
+            ref={linksRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={linksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.7 }}
+            className="flex gap-4 mt-6 ml-4"
+          >
+            {project.links?.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                <FiGithub />
+                View Code
+              </a>
+            )}
+            {project.links?.live && (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-lg hover:bg-slate-800 transition-colors"
+              >
+                <FiExternalLink />
+                Live Demo
+              </a>
+            )}
+          </motion.div>
+        )}
       </div>
     </div>
   );

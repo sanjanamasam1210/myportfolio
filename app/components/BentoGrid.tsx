@@ -18,14 +18,14 @@ const BentoGrid = ({ images = [] }: BentoGridProps) => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
         {images.map((img, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer"
+            className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] max-w-[400px]"
             onClick={(e) => {
               const imgElement = e.currentTarget.querySelector('img');
               if (imgElement) {

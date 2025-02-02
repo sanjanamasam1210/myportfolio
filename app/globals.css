@@ -31,7 +31,8 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Switzer'; /* Use your custom font */
+    font-family: 'Switzer';
+     /* Use your custom font */
   }
 }
 
