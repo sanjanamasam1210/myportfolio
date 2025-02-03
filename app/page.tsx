@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Loading from "./loading";
 import Projects from "./projects/page";
+import Technology from "./technology/page";
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
               Hey, I&apos;m Sanjana
             </h1>
             <p className="text-2xl mb-6 text-center md:text-left">Full-Stack Web Developer</p>
-            <p className="text-lg text-center md:text-left leading-relaxed">
+            <p className="text-lg text-center md:text-left leading-relaxed tracking-wide">
               I enjoy creating interactive and visually appealing websites while continuously learning new technologies to stay up-to-date with the latest trends in web development.
             </p>
           </div>
@@ -29,6 +30,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <Projects/>
+        <Technology/>
      
       </div>
     </div>

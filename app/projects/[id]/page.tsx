@@ -38,11 +38,11 @@ const ProjectPage = () => {
         ref={headerRef}
         initial={{ opacity: 0, y: 20 }}
         animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="mb-12 ml-4"
       >
-        <h1 className="text-6xl font-bold mb-2 font-clash-display-semibold">{project.title}</h1>
-        <p className="text-xl text-gray-600 mb-6">{project.description}</p>
+        <h1 className="text-6xl font-bold md:mt-10 mt-6 lg:mt-12 mb-2 font-clash-display-semibold text-center">{project.title}</h1>
+        <p className="text-xl text-gray-800 mb-6 text-center">{project.description}</p>
       </motion.div>
 
       {/* Bento Grid */}
@@ -56,11 +56,11 @@ const ProjectPage = () => {
             ref={detailsRef}
             initial={{ opacity: 0, y: 20 }}
             animate={detailsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="prose max-w-none ml-4"
           >
-            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Project Details</h2>
-            <p className="text-gray-700 leading-relaxed">{project.details}</p>
+            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium tracking-wide">Project Details</h2>
+            <p className="leading-relaxed text-md tracking-wider">{project.details}</p>
           </motion.div>
         )}
 
@@ -70,15 +70,15 @@ const ProjectPage = () => {
             ref={techStackRef}
             initial={{ opacity: 0, y: 20 }}
             animate={techStackInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="ml-4"
           >
-            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Technology Stack</h2>
+            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium tracking-wide">Technology Stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                  className="bg-primary/10 text-primary pr-5 py-1 rounded-full text-md tracking-wider"
                 >
                   {tech}
                 </span>
@@ -96,10 +96,10 @@ const ProjectPage = () => {
             transition={{ duration: 0.6 }}
             className="ml-4"
           >
-            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium">Key Features</h2>
+            <h2 className="text-3xl font-medium mb-4 font-clash-display-medium tracking-wide">Key Features</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {project.features.map((feature, index) => (
-                <li key={index} className="flex items-center bg-gray-50 rounded-lg p-3">
+                <li key={index} className="flex items-center bg-gray-50 rounded-lg p-3 tracking-wider">
                   <span className="text-primary mr-2">•</span>
                   {feature}
                 </li>
@@ -114,7 +114,7 @@ const ProjectPage = () => {
             ref={linksRef}
             initial={{ opacity: 0, y: 20 }}
             animate={linksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="flex gap-4 mt-6 ml-4"
           >
             {project.links?.github && (
@@ -122,7 +122,7 @@ const ProjectPage = () => {
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                className="tracking-wider flex items-center gap-2 px-6 py-2 bg-gray-800 text-white hover:bg-gray-700 transition-colors"
               >
                 <FiGithub />
                 View Code
@@ -133,7 +133,7 @@ const ProjectPage = () => {
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-2 bg-black text-white rounded-lg hover:bg-slate-800 transition-colors"
+                className=" tracking-wider flex items-center gap-2 px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
               >
                 <FiExternalLink />
                 Live Demo
