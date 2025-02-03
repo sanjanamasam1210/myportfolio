@@ -2,6 +2,7 @@ import Image from "next/image";
 import Loading from "./loading";
 import Projects from "./projects/page";
 import Technology from "./technology/page";
+import Contact from "./components/Contact";
 
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         {/* Projects Section */}
         <Projects/>
         <Technology/>
+        <Contact/>
      
       </div>
     </div>

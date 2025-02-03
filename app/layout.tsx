@@ -5,6 +5,7 @@ import { Manrope,Space_Mono } from "next/font/google";
 import ScrollProgressButton from "./components/ScrollProgressButton";
 
 import Cursor from "./cursor";
+import Footer from "./components/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <ScrollProgressButton />
+        <Footer />
       </body>
     </html>
   );
