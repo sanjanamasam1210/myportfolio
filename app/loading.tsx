@@ -16,7 +16,7 @@ export default function Loading() {
       return;
     }
 
-    const hasLoaded = localStorage.getItem('hasLoaded');
+    const hasLoaded = sessionStorage.getItem('hasLoaded'); // Changed to sessionStorage
     if (!hasLoaded) {
       const interval = setInterval(() => {
         setPercentage(prev => {
@@ -24,7 +24,7 @@ export default function Loading() {
             clearInterval(interval);
             setTimeout(() => {
               setIsLoading(false);
-              localStorage.setItem('hasLoaded', 'true');
+              sessionStorage.setItem('hasLoaded', 'true'); // Changed to sessionStorage
             }, 500);
             return 100;
           }
