@@ -22,7 +22,7 @@ const Contact = () => {
   return (
     <div className=" flex items-center justify-center px-4 mt-20">
       <div className="w-full max-w-2xl">
-        <h1 className="text-3xl font-semibold text-center mb-8">Get in Touch</h1>
+        <h1 className="text-3xl font-semibold text-center mb-8 font-clash-display-regular tracking-wider">Get in Touch</h1>
         
 
         <form onSubmit={handleSubmit} className="space-y-6">
