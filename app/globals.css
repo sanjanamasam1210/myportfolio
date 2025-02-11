@@ -10,6 +10,7 @@
 @import url('../public/css/switzer.css');
 @import url('../public/css/clash-display.css');
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -24,21 +25,34 @@
     --border: 240 3.7% 15.9%; /* Moved border to top */
     /* ... rest of your dark variables */
   }
-
   * {
     @apply border-border; /* Now properly defined */
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Switzer';
+    background-color: #f8f8f8;
+    color:#111111;
      /* Use your custom font */
-  }
-}
+    }  }
 
 ::selection {
-  background-color:rgba(0, 0, 0, 0.551);
+  background-color:#111111;
   color: white;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide in Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide in IE/Edge (legacy) */
+body {
+  -ms-overflow-style: none;
+}
+
 
 

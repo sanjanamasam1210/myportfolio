@@ -9,6 +9,31 @@ export default {
   ],
   theme: {
   	extend: {
+		animation: {
+			scroll: 'scroll 50s linear infinite',
+			scroll2: 'scroll2 50s linear infinite',
+		},
+		keyframes: {
+			scroll: {
+				'0%': {
+					transform: 'translateX(0%)'
+				},
+				'100%': {
+					transform: 'translateX(100%)'
+				}
+			},
+			scroll2: {
+				'0%': {
+					transform: 'translateX(-100%)'
+				},
+				'100%': {
+					transform: 'translateX(0%)'
+				}
+			},
+		},
+		borderWidth: {
+		 '3': '3px',
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

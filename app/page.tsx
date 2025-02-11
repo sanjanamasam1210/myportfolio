@@ -2,7 +2,7 @@ import Image from "next/image";
 import Loading from "./loading";
 import Projects from "./projects/page";
 import Technology from "./technology/page";
-import Contact from "./components/Contact";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -32,8 +32,19 @@ export default function Home() {
         {/* Projects Section */}
         <Projects/>
         <Technology/>
-        <Contact/>
-     
+        <div className="min-h-[75vh] flex justify-center items-center flex-col">
+        <div className="font-clash-display-bold text-center text-7xl mt-10">Get in Touch</div>
+        <div className="flex justify-center mt-4">
+        <Link href="/contact">
+            <button
+              type="submit"
+              className="px-12 py-3 rounded-full border-[#111111] border-3 font-semibold hover:bg-[#111111] hover:text-white transition-colors mt-6"
+            >
+              Contact
+            </button>
+            </Link>
+          </div>
+          </div>
       </div>
     </div>
   );
