@@ -54,5 +54,8 @@ body {
   -ms-overflow-style: none;
 }
 
+input:focus, textarea:focus {
+  outline: none;
+}
 
 
