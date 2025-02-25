@@ -53,67 +53,30 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Calendar",
-    description: "Full-stack e-commerce solution with modern UI/UX",
-    imageSrc: "/calendar.jpg",
-    images: [
-      "/calendar.jpg",
-      "/calendar.jpg",
-      "/calendar.jpg"
-    ],
-    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
-    features: [
-      "Product catalog with filters",
-      "Shopping cart persistence",
-      "Stripe payment integration"
-    ],
-    details: "Developed a responsive e-commerce platform with shopping cart functionality and payment gateway integration...",
-    links: {
-      live: "https://example.com",
-      github: "https://github.com/example/ecommerce"
-    }
-  },
-  {
-    id: 2,
-    title: "PrimeCart",
-    description: "Analytics dashboard for social media metrics",
-    imageSrc: "/primecart.jpg",
-    images: [
-      "/primecart.jpg",
-      "/primecart.jpg"
-    ],
-    technologies: ["React", "TypeScript", "Chart.js", "Firebase"],
-    details: "Created a real-time analytics dashboard with data visualization features...",
-    links: {
-      github: "https://github.com/example/dashboard"
-    }
-  },
-  {
-    id: 3,
-    title: "Welcome",
-    description: "Full-stack e-commerce solution with modern UI/UX",
+    title: "Kofi Kinara",
+    description: "Full-stack Hyderabad Cafes listing platform",
     imageSrc: "/welcome.jpg",
     images: [
       "/welcome.jpg",
       "/welcome.jpg",
       "/welcome.jpg"
     ],
-    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     features: [
       "Product catalog with filters",
       "Shopping cart persistence",
       "Stripe payment integration"
     ],
-    details: "Developed a responsive e-commerce platform with shopping cart functionality and payment gateway integration...",
+    details: "A Platform for displaying all the Hyderabad Cafes at one place, where one could list a cafe or review one, this Project is still in development",
     links: {
-      live: "https://example.com",
-      github: "https://github.com/example/ecommerce"
+      live: "https://kofi-kinara.vercel.app/",
+      github: "https://github.com/sanjanamasam1210/KofiKinara"
     }
   },
   {
-    id: 4,
+    id: 2,
     title: "Portfolio",
-    description: "Full-stack e-commerce solution with modern UI/UX",
+    description: "My Portfolio",
     imageSrc: "/calendar.jpg",
     images: [
       "/calendar.jpg",
@@ -122,16 +85,53 @@ export const projects: Project[] = [
       "/3.jpg",
       "/4.jpg"
     ],
-    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Stripe"],
+    technologies: ["Next.js", "PostreSQL", "Supabase", "Prisma", "Tailwind CSS", "TypeScript"],
     features: [
       "Product catalog with filters",
       "Shopping cart persistence",
       "Stripe payment integration"
     ],
-    details: "Developed a responsive e-commerce platform with shopping cart functionality and payment gateway integration...",
+    details: "Developed a responsive Portfolio to showcase all my projects ",
+    links: {
+      live: "https://sanjanamasam.vercel.app/",
+      github: "https://github.com/sanjanamasam1210/myportfolio"
+    }
+  },
+  {
+    id: 3,
+    title: "Calendar",
+    description: "The Calendar Scheduling Platform is a comprehensive full-stack application that simplifies meeting scheduling and calendar management. ",
+    imageSrc: "/calendar.jpg",
+    images: [
+      "/calendar.jpg",
+      "/calendar.jpg",
+      "/calendar.jpg"
+    ],
+    technologies: ["Next.js", "PostreSQL", "Supabase", "Prisma", "Tailwind CSS", "TypeScript"],
+    features: [
+      "Product catalog with filters",
+      "Shopping cart persistence",
+      "Stripe payment integration"
+    ],
+    details: " It features dynamic booking forms, real-time updates, and a fully custom-built calendar system, all wrapped in a clean, responsive interface.",
     links: {
       live: "https://example.com",
-      github: "https://github.com/example/ecommerce"
+      github: "https://github.com/sanjanamasam1210/Calendar/tree/auth-implement"
+    },
+  },
+  {
+    id: 4,
+    title: "PrimeCart",
+    description: "This MERN stack project implements a full-fledged Ecommerce platform",
+    imageSrc: "/primecart.jpg",
+    images: [
+      "/primecart.jpg",
+      "/primecart.jpg"
+    ],
+    technologies: ["React", "JavaScript", "MongoDB", "NodeJS", "Express"],
+    details: "It is integrated with payment gateway functionality. It includes an admin dashboard for managing products and orders, and a user dashboard for browsing and purchasing items securely.",
+    links: {
+      github: "https://github.com/sanjanamasam1210/mern-ecommerce"
     }
   },
 ];
